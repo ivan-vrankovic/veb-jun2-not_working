@@ -1,0 +1,6 @@
+<div class="alert alert-info" *ngIf="song" (click)="incrementCount(song._id)">
+    <p>
+        {{song.artist}} {{song.title}} {{song.count}}
+    </p>
+    <button type="submit">+1</button>
+</div>

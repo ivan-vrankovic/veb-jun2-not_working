@@ -1,0 +1,12 @@
+Choose a criterium for sorting:
+<div class="row">
+    <select class="form-control" (change)="sortSongsBy($event)">
+        <option selected="selected"></option>
+        <option value="artist">Sort by song artist</option>
+        <option value="title">Sort by song title</option>
+        <option value="count">Sort by song count</option>
+    </select>
+</div>
+<app-song *ngFor="let song of songs">
+    {{song.title}} {{song.artist}} {{song.count}}
+</app-song>

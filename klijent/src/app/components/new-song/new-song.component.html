@@ -1,0 +1,9 @@
+<h1>Add a new song to playlist</h1>
+<form [formGroup] = "newSongForm" (ngSubmit) = "addSong(newSongForm.value)">
+    <label>Artist name: </label> <br/>
+    <input type="text" formControlName="artist" /><br/><br/>
+
+    <label>Song title: </label> <br/>
+    <input type="text" formControlName="title" /> <br/> <br/>
+    <button type="submit">Add a song</button>
+</form>
