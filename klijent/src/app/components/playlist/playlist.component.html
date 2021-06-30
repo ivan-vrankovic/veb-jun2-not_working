@@ -7,6 +7,6 @@ Choose a criterium for sorting:
         <option value="count">Sort by song count</option>
     </select>
 </div>
-<app-song *ngFor="let song of songs">
-    {{song.title}} {{song.artist}} {{song.count}}
+<app-song *ngFor="let s of songs" [data]="s">
+    {{s.title}} {{s.artist}} {{s.count}}
 </app-song>

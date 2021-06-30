@@ -8,13 +8,14 @@ import { Song } from 'src/app/songModel';
   templateUrl: './playlist.component.html',
   styleUrls: ['./playlist.component.css']
 })
-export class PlaylistComponent implements OnInit {
+export class PlaylistComponent implements OnInit, OnDestroy {
 
   public activeSubs: Subscription[] = [];
 
   public songs: Song[] = [];
 
   constructor(private songService: SongService) { }
+
 
   sortSongsBy(event: any) {
     const sortParam = event.target.value;
@@ -27,5 +28,11 @@ export class PlaylistComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    for (const sub of this.activeSubs) {
+      sub.unsubscribe();
+    }
   }
 }

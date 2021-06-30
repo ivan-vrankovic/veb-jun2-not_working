@@ -11,7 +11,7 @@ import { Song } from 'src/app/songModel';
 export class SongComponent implements OnInit, OnDestroy {
 
   @Input()
-  public song: Song;
+  song: Song;
 
   public songs: Observable<Song[]>;
 
