@@ -20,7 +20,7 @@ export class SongComponent implements OnInit, OnDestroy {
   public activeSubs: Subscription[] = [];
 
   constructor(private songService: SongService) {
-   }
+  }
 
   ngOnInit(): void {
     this.songs = this.songService.getSongs("count");
@@ -33,7 +33,7 @@ export class SongComponent implements OnInit, OnDestroy {
   }
 
 
-  public incrementCount(id: string) {
+  public incrementCount(id: string): void {
     const body = {
       _id: id
     }
@@ -44,5 +44,4 @@ export class SongComponent implements OnInit, OnDestroy {
     this.activeSubs.push(sub);
     this.noIncrement = false;
   }
-
 }
